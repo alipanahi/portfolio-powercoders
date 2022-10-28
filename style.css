@@ -1,0 +1,324 @@
+* {
+    box-sizing: border-box;
+}
+body{
+    background: #fff;
+    color: #303030;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Source Code Pro', monospace;
+}
+html{
+    scroll-behavior: smooth;
+}
+section {
+    padding: 3em 2em;
+}
+img{
+    display: block;
+    max-width: 100%;
+}
+strong{
+    font-weight: 900;
+    display: block;
+}
+h1, h2, h3 {
+    line-height: 1;
+    margin: 0;
+}
+h1 {
+    font-size: 3rem;
+    font-weight: 300;
+}
+h2 {
+    font-size: 2.25rem;
+    margin-bottom: .25em;
+}
+h3 {
+    font-size: 1.25rem;
+}
+
+.subtitle {
+    margin: 0;
+    font-size: 1.25rem;
+    background: #00bfff;
+    margin-bottom: 1em;
+    padding: .25em 1em;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+.logo-text{
+    font-size: 1.25rem;
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+}
+nav{
+    position: fixed;
+    background: #303030;
+    color: #fff;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 750ms cubic-bezier(.5, 0, .5, 1),
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.nav-link{
+    color: inherit;
+    font-weight: 900;
+    font-size: 2.25rem;
+    text-decoration: none;
+}
+.nav-link:hover{
+    color:#00bfff;
+}
+.nav-btn{
+    
+    position: relative; 
+    height: 2.5em; 
+    width: 5em; 
+    border: 2.5px solid #e4e7ec; 
+    border-radius: 50em; 
+    background-color: white; 
+    box-shadow: 0px 5px 10px #e4e7ec; 
+    transition: background-color 1ms;
+    color:#303030;
+
+}
+.nav-btn:hover,
+.nav-btn:focus{
+    background: #303030;
+    color:#fff;
+    cursor: pointer;
+}
+.nav-open nav{
+    transform: translateX(0);
+}
+.nav-open .nav-btn{
+    position: fixed;
+}
+.intro{
+    position: relative;
+}
+.intro img {
+    box-shadow: .25em .25em .75em rgba(0, 0, 0, .25),
+                .125em .125em .25em rgba(0, 0, 0, .15);
+}
+.intro h1 strong{
+    letter-spacing: -.11em;
+    word-spacing: -.25em;
+}
+
+.services{
+    background: #303030;
+    background-image: url(img/services.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
+    background-blend-mode: multiply;
+    color: #fff;
+    text-align: center;
+}
+.services-title {
+    color: #00bfff;
+    position: relative;
+}
+.services-title::after{
+    content: '';
+    display: block;
+    width: 20%;
+    height: 1px;
+    margin: .5em auto 1em;
+    background: #fff;
+    opacity: .25;
+}
+
+.about-me{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.about-me img {
+    box-shadow: .25em .25em .75em rgba(0, 0, 0, .25),
+                .125em .125em .25em rgba(0, 0, 0, .15);
+}
+.about-me img:hover {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+.my-work {
+    background: #303030;
+    color: #fff;
+    text-align: center;
+}
+.my-work p{
+    color: #00bfff;
+    font-weight: 300;
+    margin-bottom: 2em;
+}
+.projects{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+}
+.projects-item {
+    background: #303030;
+    overflow: hidden;
+    position: relative;
+}
+.project-img {
+    transition: transform 750ms cubic-bezier(.5, 0, .5, 1),
+    opacity 250ms linear;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid #00bfff;
+}
+.project-img:hover,
+.projects-item:focus .project-img {
+    transform: scale(1.2);
+    opacity: .75;
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #fff;
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    font-size: 1.25rem;
+    font-weight: 300;
+    padding: .5em;
+    text-align: center;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.projects-item:hover .overlay {
+    opacity: 1;
+}
+
+footer{
+    background: #303030;
+    background-image: url(img/footer.webp);
+    background-position: right;
+    background-blend-mode: multiply;
+    color: #fff;
+    text-align: center;
+    padding: 2.5em 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+footer a {
+    color: inherit;
+    text-decoration: none;
+    
+}
+.social{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 0;
+    padding: 0;
+}
+.social > li {
+    margin: 0 .5em;
+}
+footer a:hover,
+footer a:focus,
+.social > li:hover,
+.social > li:focus {
+    opacity: .75;
+}
+
+@media (min-width: 700px){
+    .intro{
+        width: min-content;
+        margin: 0 auto;
+        display: grid;
+        grid-template-areas: 
+            "img gap header"
+            "img gap title"    
+        ;
+        grid-template-columns: min-content 1em max-content;
+        ;
+    }
+    
+    .intro img {
+        grid-area: img;
+        min-width: 200px;
+        position: relative;
+        z-index: 2;
+        
+    }
+    .intro h1{
+        grid-area: header;
+    }
+    .intro p {
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+    }
+
+    .my-services{
+        display: flex;
+        max-width: 1000px;
+        margin: 0 auto;
+        justify-content: space-between;
+    }
+    .my-services > div{
+        max-width: 45%;
+    }
+
+    .about-me{
+        display: grid;
+        grid-template-columns: 1fr 1em 200px;
+        grid-template-areas: 
+            "title gap img"
+            "subtitle gap img"
+            "body gap img"
+        ;
+    }
+    .about-me img {
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+        height: 100%;
+        object-fit: cover;
+
+    }
+    .about-me h2{
+        grid-area: title;
+    }
+    .about-me .subtitle {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 2em);
+        padding-left: 1em;
+        padding-right: calc(200px + 1em);
+    }
+    .about-body{
+        grid-area: body;
+    }
+    
+}
